@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Leaflet Step-1</title>
+
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/style.css" />
+    <style>
+      #map {
+        width: 960px;
+        height: 500px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Map visualisation of the data for earthquakes in last 7 days</h1>
+    <!-- The div that holds our map -->
+    <div id="map"></div>
+
+    <div style="position: relative; height: 160px; width: 240px; display: flex">
+      <div
+        style="
+          background: linear-gradient(
+            to bottom,
+            hsl(155, 75%, 0%) 0%,
+            hsl(155, 75%, 50%) 50%,
+            hsl(155, 75%, 100%) 100%
+          );
+          /* background: linear-gradient(
+          to left,
+          #333,
+          #333 50%,
+          #eee 75%,
+          #333 75%
+        ); */
+          height: 120px;
+          width: 100px;
+          margin: 40px;
+        "
+      ></div>
+      <div style="position: absolute; top: 40px; right: 0">High Depth</div>
+      <div style="position: absolute; bottom: 0; right: 0">Low Depth</div>
+    </div>
+
+    <div
+      id="popup"
+      style="
+        position: fixed;
+        top: 80px;
+        right: 20px;
+        width: 360px;
+        height: 260px;
+        border: 2px solid hsl(40, 75%, 70%);
+        display: none;
+        background-color: white;
+        padding: 4px;
+      "
+    >
+      <div
+        id="close-popup"
+        style="
+          position: absolute;
+          top: -10px;
+          right: -10px;
+          background-color: black;
+          border-radius: 50%;
+          color: white;
+          padding: 4px 8px;
+        "
+      >
+        X
+      </div>
+      <ul></ul>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <!-- D3 JavaScript -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- Our JavaScript -->
+    <script type="text/javascript" src="static/js/logic.js"></script>
+  </body>
+</html>
